@@ -36,11 +36,11 @@ We considered alternatives such as using a bar chart for the monthly trend or us
 
 ## 2. Development Process
 
-### **Team Contributions**
+### **Overview of the Team’s Development Process**
 
-- **Yidong Shi:** Worked on interactive features and debugging—hover tooltips, click-to-view country trends, the month slider, and fixing major ISO3 matching issues. also refined the UI, improved overall map accuracy, and wrote the project’s README.
-- **Haoshuo Bi:** Downloaded the 2024 NDVI dataset from NASA MODIS, wrote scripts to aggregate and clean the data at the country level, and built the core D3.js framework of the website — including the initial version of the interactive world map, month slider, country-level line chart, and the dark-theme UI.
-- **Yuntao Shan:** Developed and improved the NDVI trend line chart, contributed to layout refinement and visual styling, and assisted with integrating final interactive features. He also revised our checkpoint slides and participated in creating and presenting the checkpoint video.
+We first registered for NASA Earthdata access and downloaded all twelve 2024 MOD13C2 HDF files.  After setting up a conda environment, we wrote a Python script that extracted each month’s NDVI data, computed country-level averages, matched ISO3 codes, and exported a clean, unified CSV.  Additional cleaning and formatting were finished in Jupyter Notebook, producing the final dataset used in our visualization.
+
+With the data prepared, we built the website structure and implemented the core D3.js components: the world map, color scale, month slider, zoom/pan, and the click-to-view country trend chart. A large portion of the development involved debugging incorrect country matches in the TopoJSON. In the "Challenges & Solutions" section later on, we elaborated in detail on the problems we encountered and how we solved them.
 
 ### **Challenges & Solutions**
 One of the biggest challenges was that the original TopoJSON file did not contain reliable ISO3 codes, resulting in many countries displaying “No data.”  
