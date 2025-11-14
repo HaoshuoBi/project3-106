@@ -11,6 +11,9 @@
   <header>
     <div class="pill">MODIS · Final</div>
     <h1>Seasonal Greening: Exploring Global Vegetation Change</h1>
+    <div class="pill" style="margin-top:12px;">
+      Team: Double Double — Haoshuo Bi · Yidong Shi · Yuntao Shan
+    </div>
     <div class="subtitle">Interactive D3 World Map · Monthly MODIS NDVI (2024)</div>
   </header>
 
@@ -49,6 +52,91 @@
       </ul>
     </aside>
   </div>
+
+  <div class="wrap">
+    <section class="panel" style="margin-top:40px; padding:28px; line-height:1.6;">
+      <h2 style="margin-top:0;">Project Writeup</h2>
+
+      <p><strong>Seasonal Greening: Exploring Global Vegetation Change (MODIS NDVI 2024)</strong></p>
+
+      <p>
+        🔗 <strong>Github Repositorie:</strong><br>
+        <a href="https://github.com/HaoshuoBi/project3-106" target="_blank" style="color:#9db2ff;">
+          https://github.com/HaoshuoBi/project3-106
+        </a>
+      </p>
+
+      <h3>1. Visualization Design Rationale</h3>
+      <p>
+        Our goal was to explore how global vegetation greenness (NDVI) changes across seasons. 
+        We combined a choropleth world map with a monthly trend chart to support spatial and temporal exploration.
+      </p>
+
+      <h4>Visual Encodings</h4>
+      <ul>
+        <li>Sequential green color scale for NDVI values.</li>
+        <li>Clean polygon borders for country shapes.</li>
+        <li>Line chart using position + connected lines to show seasonal patterns.</li>
+      </ul>
+
+      <h4>Data Transformations</h4>
+      <ul>
+        <li>Processed MODIS MOD13C2 NDVI data into country-level monthly averages.</li>
+        <li>Mapped each ISO3 code to a 12-month NDVI array.</li>
+        <li>Handled missing data and applied name/ISO corrections.</li>
+      </ul>
+
+      <h4>Interaction Design</h4>
+      <ul>
+        <li>Month slider for seasonal animation.</li>
+        <li>Hover tooltip for precise NDVI values.</li>
+        <li>Click a country to see a detailed monthly trend chart.</li>
+        <li>Pan + zoom for exploring regions closely.</li>
+      </ul>
+
+      <h3>2. Development Process</h3>
+
+      <h4>Overview of the Team’s Development Process</h4>
+      <p>
+        We first downloaded all twelve 2024 MOD13C2 HDF files from NASA Earthdata. After setting up a conda environment, 
+        we wrote a Python script to extract monthly NDVI, compute country-level averages, match ISO3 codes, and export a unified CSV. 
+        Final cleaning was completed in Jupyter Notebook.
+      </p>
+      <p>
+        With the dataset ready, we built the website and implemented core D3 components including the world map, color scale, 
+        month slider, pan/zoom, and the country trend chart. A major part of development involved debugging ISO mismatches in 
+        the TopoJSON.
+      </p>
+
+      <h4>Challenges & Solutions</h4>
+      <ul>
+        <li>Fixed unreliable ISO3 codes in TopoJSON using a custom name-to-ISO map and a better dataset.</li>
+        <li>Used console debugging to detect unmatched countries and repair mapping issues.</li>
+      </ul>
+
+      <h4>Time Spent</h4>
+      <ul>
+        <li>Data cleaning and preprocessing</li>
+        <li>Implementing D3 map, slider, and trend chart</li>
+        <li>Debugging ISO3 mismatches</li>
+        <li>Refining UI/UX</li>
+        <li>Creating checkpoint slides + recording and presenting the checkpoint video</li>
+      </ul>
+
+      <h3>3. Creativity and Originality</h3>
+      <p>
+        Our spatial–temporal hybrid design enables intuitive exploration of global vegetation patterns across months. 
+        The interactive map paired with per-country seasonality charts provides insight beyond what static visualizations can show.
+      </p>
+
+      <h3>4. Summary</h3>
+      <p>
+        The final visualization is polished, functional, and grounded in clear encoding choices. It effectively enables 
+        exploration of global and seasonal vegetation changes for 2024.
+      </p>
+    </section>
+  </div>
+
 
   <footer>
     Source: NASA MODIS/Terra MOD13C2 (2024). Values are monthly country-mean NDVI (0–1).
