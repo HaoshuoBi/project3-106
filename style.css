@@ -1,0 +1,165 @@
+:root {
+  --bg:#0b1020; --panel:#121a34; --text:#e6ebff; --muted:#9db2ff;
+  --accent:#7cc77c; --stroke:#2a355d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 16px/1.5 system-ui;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 70% -10%, #1c2650 0%, var(--bg) 60%);
+}
+
+header {
+  padding: 28px 20px 10px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(20px, 3.8vw, 36px);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: clamp(12px, 1.8vw, 16px);
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 16px auto;
+  padding: 0 16px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  box-shadow: 0 6px 30px rgba(0,0,0,.25);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr minmax(260px, .8fr);
+  gap: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0f1732;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+  width: 220px;
+}
+
+.viz {
+  padding: 10px;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px 16px;
+}
+
+.legend .bar {
+  height: 12px;
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(90deg,#5a3d1e,#7da65e,#94cf88,#b7e3a7);
+}
+
+.legend small {
+  color: var(--muted);
+}
+
+.aside {
+  padding: 16px;
+}
+
+.aside h3 {
+  margin: 0 0 8px 0;
+}
+
+.aside ul {
+  margin: 10px 0 0 18px;
+  color: var(--muted);
+}
+
+.aside li {
+  margin: 6px 0;
+}
+
+footer {
+  max-width: 1100px;
+  margin: 8px auto 28px;
+  color: #a5b5ff80;
+  font-size: 13px;
+  text-align: center;
+}
+
+.pill {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #0f1732;
+  border: 1px solid var(--stroke);
+  color: var(--muted);
+}
+
+.tooltip {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -140%);
+  background: #0c132a;
+  color: var(--text);
+  border: 1px solid var(--stroke);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  opacity: 0;
+  transition: opacity .12s;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+#miniChart path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+#miniChart circle {
+  fill: var(--accent);
+}
+
+#miniChart text {
+  fill: var(--muted);
+  font-size: 11px;
+}
